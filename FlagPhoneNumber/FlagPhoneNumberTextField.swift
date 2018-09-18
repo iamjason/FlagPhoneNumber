@@ -146,7 +146,7 @@ open class FPNTextField: UITextField, UITextFieldDelegate, FPNCountryPickerDeleg
 	}
 	
 	private func setupLeftView() {
-		leftViewMode = UITextFieldViewMode.always
+		leftViewMode = UITextField.ViewMode.always
 		leftView = UIView()
 		leftView?.addSubview(flagButton)
 		leftView?.addSubview(phoneCodeTextField)
@@ -338,13 +338,13 @@ open class FPNTextField: UITextField, UITextFieldDelegate, FPNCountryPickerDeleg
 	}
 
 	private func getCountryListBarButtonItems() -> [UIBarButtonItem] {
-		let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-		let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(resetKeyBoard))
+		let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+		let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(resetKeyBoard))
 		
 		doneButton.accessibilityLabel = "doneButton"
 		
 		if parentViewController != nil {
-			let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(displayAlphabeticKeyBoard))
+			let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.search, target: self, action: #selector(displayAlphabeticKeyBoard))
 			
 			searchButton.accessibilityLabel = "searchButton"
 			
